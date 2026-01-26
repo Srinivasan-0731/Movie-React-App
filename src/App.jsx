@@ -1,47 +1,21 @@
-import { useEffect, useState } from "react";
-import SearchBar from "./components/SearchBar";
-import MovieCard from "./components/MovieCard";
-import NavBar from "./components/NavBar";
+import React from 'react'
+import { Routes, Route } from 'react-router-dom';
+import Home from './components/Home';
+import MovieDetails from './components/MovieDetails';
+import Favorites from './components/Favorites';
 
 function App() {
-  const [allMovieData, setAllMovieData] = useState([]);
-  const [searchMovie, setSearchMovie] = useState("");
-  const [loading, setLoading] = useState(false);
-
-  // Function to fetch data with debouncing
-  const fetchMovieData = async () => {
-    try {
-      setLoading(true);
-      const res = await fetch(
-        `https://omdbapi.com/?s=${searchMovie}&apikey=3f2af509`,
-      );
-      const data = await res.json();
-      setAllMovieData(data.Search || []);
-      setLoading(false);
-    } catch (error) {
-      console.log(error);
-      setLoading(false);
-    }
-  };
-
-  console.log(allMovieData);
   return (
-    <div className="bg">
-      <NavBar />
-      <SearchBar
-        searchMovie={searchMovie}
-        setSearchMovie={setSearchMovie}
-        fetchMovieData={fetchMovieData}
-      />
-      {allMovieData && allMovieData.length > 0 ? (
-        <MovieCard allMovieData={allMovieData} loading={loading} />
-      ) : (
-        <h1 style={{ textAlign: "center", marginTop: "100px", opacity: "0.8" }}>
-          Search Movies
-        </h1>
-      )}
+    <div>
+
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/movie/:imdbID' element={<MovieDetails />} />
+        <Route path='/favorites' element={<Favorites />} />
+      </Routes>
+
     </div>
-  );
+  )
 }
 
 export default App;

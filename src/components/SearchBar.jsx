@@ -2,10 +2,11 @@ import React from "react";
 
 function SearchBar({ searchMovie, setSearchMovie, fetchMovieData }) {
 	return (
-		<div className="searchBox">
+		<div className="searchBox d-flex justify-center my-4 gap-2">
 			<input
 				type="text"
-				placeholder="Search here"
+                className="form-control w-50"
+				placeholder="Search here..."
 				value={searchMovie}
 				onChange={(e) => {
 					setSearchMovie(e.target.value);
@@ -15,10 +16,9 @@ function SearchBar({ searchMovie, setSearchMovie, fetchMovieData }) {
 						fetchMovieData();
 					}
 				}}
-				autoFocus
 			/>
 			<button onClick={fetchMovieData}>
-				<i className="fa-solid fa-magnifying-glass"></i>
+				Search
 			</button>
 		</div>
 	);
