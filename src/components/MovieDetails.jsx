@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import KeyboardBackspaceIcon from '@mui/icons-material/KeyboardBackspace';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 
-const API_KEY = "3f2af509";
+const API_KEY = "9871ed81";
 
 function MovieDetails() {
 

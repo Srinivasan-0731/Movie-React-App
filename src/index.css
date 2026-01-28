@@ -51,12 +51,23 @@ body {
   gap: 20px;
 }
 .card-container .card {
-  height: 450px;
+  height: 490px;
+  background: #555;
+  border: 1px solid white;
+  align-items: center;
+  padding: 30px;
+  margin-left: 6px;
+  gap:6px;
+  border-radius: 6px;
 }
 .card-container img {
-  height: 75%;
+  height: 85%;
   object-fit: cover;
   object-position: center;
+  border-radius: 2px;
+}
+.card-container img:hover {
+  transform: translateX(-4%);
 }
 
 .no-data {
@@ -153,5 +164,78 @@ body {
   padding: 5px 10px;
   border-radius: 5px;
   text-decoration: none;
+  color: white;
+}
+
+.favorite:hover {
+  background-color: white;
+  color: black;
+}
+
+.load-more-btn {
+  padding: 10px 20px;
+  margin: 20px auto;
+  display: block;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  background-color: #333;
+  color: white;
+}
+.load-more-btn:hover {
+  background-color: #555;
+}
+.load-more-container {
+  text-align: center;
+}
+.load-more-container button:disabled {
+  background-color: grey;
+  cursor: not-allowed;
+}
+.load-more-container button:disabled:hover {
+  background-color: grey;
+}
+@media (max-width: 768px) {
+  .searchBox {
+    width: 80%;
+  }
+}
+
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin: 20px 0;
+}
+
+.pagination button.active {
+  background: black;
+  color: white;
+}
+
+.pagination button {
+  padding: 8px 20px;
+  border: 1px solid white;
+  cursor: pointer;
+}
+.pagination button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.select {
+  border: 2px solid white;
+  padding: 6px;
+  border-radius: 4px;
+}
+
+.select:hover {
+  background-color: white;
+  color: black;
+}
+
+.select option {
+  background: #555;
   color: white;
 }

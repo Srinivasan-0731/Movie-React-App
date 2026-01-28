@@ -13,11 +13,11 @@ function SearchBar({ searchMovie, setSearchMovie, fetchMovieData }) {
 				}}
 				onKeyDown={(e) => {
 					if (e.key === "Enter") {
-						fetchMovieData();
+						fetchMovieData(1);
 					}
 				}}
 			/>
-			<button onClick={fetchMovieData}>
+			<button onClick={() => fetchMovieData(1)}>
 				Search
 			</button>
 		</div>
